@@ -27,4 +27,15 @@ class ProductRequest extends FormRequest
             'description' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório',
+            'price.required' => 'O campo preço é obrigatório',
+            'price.regex' => 'O campo preço é inválido',
+            'description.required' => 'O campo descrição é obrigatório',
+        ];
+    }
+
 }
