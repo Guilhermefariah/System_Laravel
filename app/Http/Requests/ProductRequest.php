@@ -23,7 +23,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required',
+            'price' => 'required|regex:/^\d{0,4}(\.\d{2})$/',
             'description' => 'required',
         ];
     }

@@ -20,7 +20,7 @@
             {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Digite seu nome')) !!}
 
             {!! Form::label('price', 'Preço:') !!}
-            {!! Form::number('price', null, array('class' => 'form-control')) !!}
+            {!! Form::number('price', null, array('class' => 'form-control', 'step' => 'any')) !!}
 
             {!! Form::label('description', 'Descrição:') !!}
             {!! Form::text('description', null, array('class' => 'form-control', 'placeholder' => 'Digite a descrição')) !!}
