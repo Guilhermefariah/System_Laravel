@@ -4,6 +4,16 @@
     <div class="container">
         <h1>Cadastrar novo produto</h1>
 
+        @if($errors->any())
+            <ul class="list-group">
+                @foreach($errors->all() as $error)
+                    <li class="list-group-item list-group-item-danger">{{ $error }}</li>
+                @endforeach
+            </ul>
+
+        @endif
+
+
         {!! Form::open(array('url' => 'products', 'method' => 'post')) !!}
 
             {!! Form::label('name', 'Nome:') !!}
