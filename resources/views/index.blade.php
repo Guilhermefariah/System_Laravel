@@ -21,7 +21,11 @@
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
-                        <td></td>
+                        <td>
+                            {{ Form::open(['url' => 'products/' . $product->id, 'method' => 'delete', 'class' => 'form-delete']) }}
+                            {{ Form::submit('Excluir', ['class' => 'btn btn-danger']) }}
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
