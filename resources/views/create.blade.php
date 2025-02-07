@@ -14,7 +14,7 @@
         @endif
 
 
-        {!! Form::open(array('url' => 'products', 'method' => 'post')) !!}
+        {!! Form::open(array('route' => 'products.store', 'method' => 'post')) !!}
 
             {!! Form::label('name', 'Nome:') !!}
             {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Digite seu nome')) !!}

@@ -12,7 +12,7 @@
             </ul>
         @endif
 
-        {!! Form::open(['url' => route('products.update', $product->id), 'method' => 'put']) !!}
+        {!! Form::open(['route' => route('products.update', $product), 'method' => 'put']) !!}
 
 
             {!! Form::label('name', 'Nome:') !!}

@@ -22,7 +22,7 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         <td>
-                            {{ Form::open(['url' => 'products/' . $product->id, 'method' => 'delete', 'class' => 'form-delete']) }}
+                            {{ Form::open(['route' => ['products.destroy'. $product->id], 'method' => 'delete', 'class' => 'form-delete']) }}
                             {{ Form::submit('Excluir', ['class' => 'btn btn-danger']) }}
                             {{ Form::close() }}
                         </td>
