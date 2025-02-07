@@ -32,7 +32,7 @@ class ProductController extends Controller
     {
         Product::create($request->all());
 
-        return redirect()->route('products')->with('success', 'Produto criado com sucesso!');
+        return redirect()->route('products.index')->with('success', 'Produto criado com sucesso!');
     }
 
     /**
@@ -62,7 +62,7 @@ class ProductController extends Controller
     {
         Product::find($id)->update($request->all());
         
-        return redirect()->route('products')->with('success', 'Produto atualizado com sucesso!');
+        return redirect()->route('products.index')->with('success', 'Produto atualizado com sucesso!');
     }
 
     /**
@@ -72,6 +72,6 @@ class ProductController extends Controller
     {
         Product::find($id)->delete();
         
-        return redirect()->route('products')->with('success', 'Produto excluído com sucesso!');
+        return redirect()->route('products.index')->with('success', 'Produto excluído com sucesso!');
     }
 }
