@@ -10,11 +10,10 @@
                     <li class="list-group-item list-group-item-danger">{{ $error }}</li>
                 @endforeach
             </ul>
-
         @endif
 
+        {!! Form::open(['url' => route('products.update', $product->id), 'method' => 'put']) !!}
 
-        {!! Form::open(array('url' => 'products/' . '$product->id', 'method' => 'put')) !!}
 
             {!! Form::label('name', 'Nome:') !!}
             {!! Form::text('name', $product->name, array('class' => 'form-control', 'placeholder' => 'Digite seu nome')) !!}

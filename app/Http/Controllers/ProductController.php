@@ -60,7 +60,10 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, string $id)
     {
-        //
+       Product::find($id)->update($request->all());
+        
+        return redirect()->route('products')->with('success', 'Produto atualizado com sucesso!');
+        
     }
 
     /**
