@@ -12,9 +12,8 @@
             </ul>
         @endif
 
-        {!! Form::open(['route' => route('products.update', $product), 'method' => 'put']) !!}
-
-
+        {!! Form::model($product, array('route' => array('products.update', $product->id), 'method' => 'put')) !!}
+        
             {!! Form::label('name', 'Nome:') !!}
             {!! Form::text('name', $product->name, array('class' => 'form-control', 'placeholder' => 'Digite seu nome')) !!}
 

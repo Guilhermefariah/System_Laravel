@@ -19,11 +19,11 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'products'], function() {
-    Route::get('', ['uses' => ProductController::class, 'index'])->name('products');
-    Route::get('create', ['uses' => ProductController::class, 'create'])->name('products.create');
-    Route::post('', ['uses' => ProductController::class, 'store'])->name('products.store');
-    Route::get('{id}', ['uses' => ProductController::class, 'show'])->name('products.show');
-    Route::get('{id}/edit', ['uses' => ProductController::class, 'edit'])->name('products.edit');
-    Route::put('{id}', ['uses' => ProductController::class, 'update'])->name('products.update');
-    Route::delete('{id}', ['uses' => ProductController::class, 'destroy'])->name('products.destroy');
+    Route::get('/', [ProductController::class, 'index'])->name('products.index');
+    Route::get('create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/', [ProductController::class, 'store'])->name('products.store');
+    Route::get('{id}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::put('{id}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 });

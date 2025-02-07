@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('index', ['products' => $products]);
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('products.create');
     }
 
     /**
@@ -32,7 +32,7 @@ class ProductController extends Controller
     {
         Product::create($request->all());
 
-        return redirect('products')->with('success', 'Produto criado com sucesso!');
+        return redirect()->route('products')->with('success', 'Produto criado com sucesso!');
     }
 
     /**
@@ -42,28 +42,27 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         
-        return view('show', ['product' => $product]);
+        return view('products.show', ['product' => $product]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $product = Product::find($id);
-
-        return view('edit', ['product' => $product]);
+    
+        return view('products.edit', compact('product'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
     public function update(ProductRequest $request, string $id)
     {
-       Product::find($id)->update($request->all());
+        Product::find($id)->update($request->all());
         
         return redirect()->route('products')->with('success', 'Produto atualizado com sucesso!');
-        
     }
 
     /**
@@ -72,7 +71,6 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         Product::find($id)->delete();
-
         return redirect()->route('products')->with('success', 'Produto excluído com sucesso!');
     }
 }
