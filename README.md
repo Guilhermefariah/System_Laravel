@@ -1,4 +1,4 @@
-# Projeto de Gerenciamento de Produtos
+# Projeto CRUD de Gerenciamento de Produtos
 
 <p align="center">
   <a href="https://laravel.com" target="_blank">
